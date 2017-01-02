@@ -1,0 +1,119 @@
+- key: netsamplebeat
+  title: netsamplebeat
+  description:
+  fields:
+    - name: interface_index
+      type: long
+      required: true
+      description: >
+        index of the interface the sample was collected from
+    - name: interface_name
+      description: >
+        name of the interface the sample was collected from
+    - name: sample_rate
+      type: long
+      required: true
+      description: >
+        rate of sampling (every nth network package is sampled)
+    - name: packet_size
+      type: long
+      description: >
+        size in bytes of the sampled package
+    - name: packet_size_extrapolated
+      type: long
+      description: >
+        packet_size multiplied by sample_rate, may be used to estimate the real data volume.
+    # Link Layer
+    - name: link.type
+      description: >
+        type of link layer (e.g.  Ethernet)
+    - name: link.src
+      description: >
+        source address on link layer, for Ethernet this is the MAC address
+    - name: link.dst
+      description: >
+        destination address on link layer, for Ethernet this is the MAC address
+    - name: link.endpoint_type
+      description: >
+        type of link layer endpoint, e.g. MAC
+    # network layer
+    - name: network.type
+      description: >
+        type of network layer (e.g. IPv4, IPv6
+    - name: network.src
+      description: >
+        source address on network layer, e.g. IPv4 or IPv6 address
+    - name: network.dst
+      description: >
+        destination address on network layer, e.g. IPv4 or IPv6 address
+    # network layer (ipv4)
+    - name: network.ipv4.protocol
+      description: >
+        ipv4 protocol, e.g. ICMP, TCP, UDP
+    - name: network.ipv4.flags
+      description: >
+        ipv4 flags, e.g. DF = do not fragment, MF = more fragments
+    - name: network.ipv4.tos
+      type: integer # should be short
+      description: >
+        ipv4 tos field, used for quality of service
+    - name: network.ipv4.ttl
+      type: integer
+      description: >
+        ipv4 time to life (TTL)
+    # network layer (ipv6)
+    - name: network.ipv6.flow_label
+      type: integer
+      description: >
+        ipv6 flow label, used for quality of service
+    - name: network.ipv6.hop_limit
+      type: integer # should be short
+      description: >
+        ipv6 hop limit, maximum remaining hops allowed for the packet
+    - name: network.ipv6.traffic_class
+      type: integer # should be short
+      description: >
+        ipv6 traffic class, used for quality of service
+    # transport layer
+    - name: transport.type
+      description: >
+        type of transport layer, e.g. TCP, UDP
+    - name: transport.src
+      description: >
+        source port of transport layer, e.g. TCP or UDP source port
+    - name: transport.dst
+      description: >
+        destination port of transport layer, e.g. TCP or UDP destination port
+    # transport layer (tcp)
+    - name: transport.tcp.ack
+      type: boolean
+      description: >
+        tcp ack flag
+    - name: transport.tcp.fin
+      type: boolean
+      description: >
+        tcp fin flag
+    - name: transport.tcp.psh
+      type: boolean
+      description: >
+        tcp psh flag
+    - name: transport.tcp.rst
+      type: boolean
+      description: >
+        tcp rst flag
+    - name: transport.tcp.syn
+      type: boolean
+      description: >
+        tcp syn flag
+    - name: transport.tcp.urg
+      type: boolean
+      description: >
+        tcp urg flag
+    - name: transport.tcp.options
+      description:
+        tcp options
+    # transport layer (udp)
+    - name: transport.udp.length
+      type: long
+      description: >
+        udp data length

@@ -1,0 +1,17 @@
+################### Netsamplebeat Configuration Example #########################
+
+############################# Netsamplebeat ######################################
+
+netsamplebeat:
+  # List interfaces to sample from as an array
+  interface:
+    # network device
+    device: any
+    # sample_rate, every nth network package is sampled (on average, sampling is done randomly)
+    sample_rate: 1000
+    # BPF filter, applied before the sampling
+    pre_sampling_filter: ""
+    # BPF filter, applied after the sampling
+    post_sampling_filter: ""
+    # should the output of netsamplebeat be ignored (filtered) before the sampling happens
+    #ignore_output: true

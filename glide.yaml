@@ -1,0 +1,19 @@
+package: github.com/breml/netsamplebeat
+import:
+- package: github.com/breml/bpfutils
+- package: github.com/elastic/beats
+  version: ^5.1.1
+  subpackages:
+  - libbeat/beat
+  - libbeat/common
+  - libbeat/logp
+  - libbeat/publisher
+- package: github.com/google/gopacket
+  version: ~1.1.12
+  subpackages:
+  - layers
+  - pcap
+- package: golang.org/x/net
+  version: 8fd7f25955530b92e73e9e1932a41b522b22ccd9
+  subpackages:
+  - bpf

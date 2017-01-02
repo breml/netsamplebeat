@@ -1,0 +1,244 @@
+{
+  "mappings": {
+    "_default_": {
+      "_all": {
+        "norms": {
+          "enabled": false
+        }
+      },
+      "_meta": {
+        "version": "5.1.1"
+      },
+      "dynamic_templates": [
+        {
+          "strings_as_keyword": {
+            "mapping": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "match_mapping_type": "string"
+          }
+        }
+      ],
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        },
+        "beat": {
+          "properties": {
+            "hostname": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "name": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "version": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            }
+          }
+        },
+        "interface_index": {
+          "type": "long"
+        },
+        "interface_name": {
+          "ignore_above": 1024,
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "link": {
+          "properties": {
+            "dst": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "endpoint_type": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "src": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "type": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            }
+          }
+        },
+        "meta": {
+          "properties": {
+            "cloud": {
+              "properties": {
+                "availability_zone": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "instance_id": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "machine_type": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "project_id": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "provider": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "region": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "network": {
+          "properties": {
+            "dst": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "ipv4": {
+              "properties": {
+                "flags": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "protocol": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "tos": {
+                  "type": "long"
+                },
+                "ttl": {
+                  "type": "long"
+                }
+              }
+            },
+            "ipv6": {
+              "properties": {
+                "flow_label": {
+                  "type": "long"
+                },
+                "hop_limit": {
+                  "type": "long"
+                },
+                "traffic_class": {
+                  "type": "long"
+                }
+              }
+            },
+            "src": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "type": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            }
+          }
+        },
+        "packet_size": {
+          "type": "long"
+        },
+        "packet_size_extrapolated": {
+          "type": "long"
+        },
+        "sample_rate": {
+          "type": "long"
+        },
+        "tags": {
+          "ignore_above": 1024,
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "transport": {
+          "properties": {
+            "dst": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "src": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "tcp": {
+              "properties": {
+                "ack": {
+                  "type": "boolean"
+                },
+                "fin": {
+                  "type": "boolean"
+                },
+                "options": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "psh": {
+                  "type": "boolean"
+                },
+                "rst": {
+                  "type": "boolean"
+                },
+                "syn": {
+                  "type": "boolean"
+                },
+                "urg": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "type": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "udp": {
+              "properties": {
+                "length": {
+                  "type": "long"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "order": 0,
+  "settings": {
+    "index.refresh_interval": "5s"
+  },
+  "template": "netsamplebeat-*"
+}

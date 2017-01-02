@@ -1,0 +1,343 @@
+
+////
+This file is generated! See _meta/fields.yml and scripts/generate_field_docs.py
+////
+
+[[exported-fields]]
+= Exported Fields
+
+[partintro]
+
+--
+This document describes the fields that are exported by Netsamplebeat. They are
+grouped in the following categories:
+
+* <<exported-fields-beat>>
+* <<exported-fields-cloud>>
+* <<exported-fields-netsamplebeat>>
+
+--
+[[exported-fields-beat]]
+== Beat Fields
+
+Contains common beat fields available in all event types.
+
+
+
+[float]
+=== beat.name
+
+The name of the Beat sending the log messages. If the Beat name is set in the configuration file, then that value is used. If it is not set, the hostname is used. To set the Beat name, use the `name` option in the configuration file.
+
+
+[float]
+=== beat.hostname
+
+The hostname as returned by the operating system on which the Beat is running.
+
+
+[float]
+=== beat.version
+
+The version of the beat that generated this event.
+
+
+[float]
+=== @timestamp
+
+type: date
+
+example: August 26th 2016, 12:35:53.332
+
+format: date
+
+required: True
+
+The timestamp when the event log record was generated.
+
+
+[float]
+=== tags
+
+Arbitrary tags that can be set per Beat and per transaction type.
+
+
+[float]
+=== fields
+
+type: dict
+
+Contains user configurable fields.
+
+
+[[exported-fields-cloud]]
+== Cloud Provider Metadata Fields
+
+Metadata from cloud providers added by the add_cloud_metadata processor.
+
+
+
+[float]
+=== meta.cloud.provider
+
+example: ec2
+
+Name of the cloud provider. Possible values are ec2, gce, or digitalocean.
+
+
+[float]
+=== meta.cloud.instance_id
+
+Instance ID of the host machine.
+
+
+[float]
+=== meta.cloud.machine_type
+
+example: t2.medium
+
+Machine type of the host machine.
+
+
+[float]
+=== meta.cloud.availability_zone
+
+example: us-east-1c
+
+Availability zone in which this host is running.
+
+
+[float]
+=== meta.cloud.project_id
+
+example: project-x
+
+Name of the project in Google Cloud.
+
+
+[float]
+=== meta.cloud.region
+
+Region in which this host is running.
+
+
+[[exported-fields-netsamplebeat]]
+== netsamplebeat Fields
+
+None
+
+
+[float]
+=== interface_index
+
+type: long
+
+required: True
+
+index of the interface the sample was collected from
+
+
+[float]
+=== interface_name
+
+name of the interface the sample was collected from
+
+
+[float]
+=== sample_rate
+
+type: long
+
+required: True
+
+rate of sampling (every nth network package is sampled)
+
+
+[float]
+=== packet_size
+
+type: long
+
+size in bytes of the sampled package
+
+
+[float]
+=== packet_size_extrapolated
+
+type: long
+
+packet_size multiplied by sample_rate, may be used to estimate the real data volume.
+
+
+[float]
+=== link.type
+
+type of link layer (e.g.  Ethernet)
+
+
+[float]
+=== link.src
+
+source address on link layer, for Ethernet this is the MAC address
+
+
+[float]
+=== link.dst
+
+destination address on link layer, for Ethernet this is the MAC address
+
+
+[float]
+=== link.endpoint_type
+
+type of link layer endpoint, e.g. MAC
+
+
+[float]
+=== network.type
+
+type of network layer (e.g. IPv4, IPv6
+
+
+[float]
+=== network.src
+
+source address on network layer, e.g. IPv4 or IPv6 address
+
+
+[float]
+=== network.dst
+
+destination address on network layer, e.g. IPv4 or IPv6 address
+
+
+[float]
+=== network.ipv4.protocol
+
+ipv4 protocol, e.g. ICMP, TCP, UDP
+
+
+[float]
+=== network.ipv4.flags
+
+ipv4 flags, e.g. DF = do not fragment, MF = more fragments
+
+
+[float]
+=== network.ipv4.tos
+
+type: integer
+
+ipv4 tos field, used for quality of service
+
+
+[float]
+=== network.ipv4.ttl
+
+type: integer
+
+ipv4 time to life (TTL)
+
+
+[float]
+=== network.ipv6.flow_label
+
+type: integer
+
+ipv6 flow label, used for quality of service
+
+
+[float]
+=== network.ipv6.hop_limit
+
+type: integer
+
+ipv6 hop limit, maximum remaining hops allowed for the packet
+
+
+[float]
+=== network.ipv6.traffic_class
+
+type: integer
+
+ipv6 traffic class, used for quality of service
+
+
+[float]
+=== transport.type
+
+type of transport layer, e.g. TCP, UDP
+
+
+[float]
+=== transport.src
+
+source port of transport layer, e.g. TCP or UDP source port
+
+
+[float]
+=== transport.dst
+
+destination port of transport layer, e.g. TCP or UDP destination port
+
+
+[float]
+=== transport.tcp.ack
+
+type: boolean
+
+tcp ack flag
+
+
+[float]
+=== transport.tcp.fin
+
+type: boolean
+
+tcp fin flag
+
+
+[float]
+=== transport.tcp.psh
+
+type: boolean
+
+tcp psh flag
+
+
+[float]
+=== transport.tcp.rst
+
+type: boolean
+
+tcp rst flag
+
+
+[float]
+=== transport.tcp.syn
+
+type: boolean
+
+tcp syn flag
+
+
+[float]
+=== transport.tcp.urg
+
+type: boolean
+
+tcp urg flag
+
+
+[float]
+=== transport.tcp.options
+
+tcp options
+
+[float]
+=== transport.udp.length
+
+type: long
+
+udp data length
+

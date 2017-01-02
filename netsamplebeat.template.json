@@ -1,0 +1,217 @@
+{
+  "mappings": {
+    "_default_": {
+      "_all": {
+        "norms": false
+      },
+      "_meta": {
+        "version": "5.1.1"
+      },
+      "dynamic_templates": [
+        {
+          "strings_as_keyword": {
+            "mapping": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "match_mapping_type": "string"
+          }
+        }
+      ],
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        },
+        "beat": {
+          "properties": {
+            "hostname": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "name": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "version": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            }
+          }
+        },
+        "interface_index": {
+          "type": "long"
+        },
+        "interface_name": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "link": {
+          "properties": {
+            "dst": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "endpoint_type": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "src": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "type": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            }
+          }
+        },
+        "meta": {
+          "properties": {
+            "cloud": {
+              "properties": {
+                "availability_zone": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "instance_id": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "machine_type": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "project_id": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "provider": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "region": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "network": {
+          "properties": {
+            "dst": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "ipv4": {
+              "properties": {
+                "flags": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "protocol": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "tos": {
+                  "type": "long"
+                },
+                "ttl": {
+                  "type": "long"
+                }
+              }
+            },
+            "ipv6": {
+              "properties": {
+                "flow_label": {
+                  "type": "long"
+                },
+                "hop_limit": {
+                  "type": "long"
+                },
+                "traffic_class": {
+                  "type": "long"
+                }
+              }
+            },
+            "src": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "type": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            }
+          }
+        },
+        "packet_size": {
+          "type": "long"
+        },
+        "packet_size_extrapolated": {
+          "type": "long"
+        },
+        "sample_rate": {
+          "type": "long"
+        },
+        "tags": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "transport": {
+          "properties": {
+            "dst": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "src": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "tcp": {
+              "properties": {
+                "ack": {
+                  "type": "boolean"
+                },
+                "fin": {
+                  "type": "boolean"
+                },
+                "options": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "psh": {
+                  "type": "boolean"
+                },
+                "rst": {
+                  "type": "boolean"
+                },
+                "syn": {
+                  "type": "boolean"
+                },
+                "urg": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "type": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "udp": {
+              "properties": {
+                "length": {
+                  "type": "long"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "order": 0,
+  "settings": {
+    "index.refresh_interval": "5s"
+  },
+  "template": "netsamplebeat-*"
+}
