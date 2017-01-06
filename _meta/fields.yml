@@ -58,7 +58,7 @@
       description: >
         ipv4 tos field, used for quality of service
     - name: network.ipv4.ttl
-      type: integer
+      type: integer # should be short
       description: >
         ipv4 time to life (TTL)
     # network layer (ipv6)
@@ -74,6 +74,10 @@
       type: integer # should be short
       description: >
         ipv6 traffic class, used for quality of service
+    - name: network.ipv6.length
+      type: integer
+      description: >
+        ipv6 payload length
     # transport layer
     - name: transport.type
       description: >

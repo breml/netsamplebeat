@@ -263,6 +263,7 @@ func (bt *Netsamplebeat) handlePacket(b *beat.Beat, packet gopacket.Packet) comm
 				"flow_label":    l.FlowLabel,
 				"hop_limit":     l.HopLimit,
 				"traffic_class": l.TrafficClass,
+				"length":        l.Length,
 			})
 		}
 		event.Put("network", networkLayer)

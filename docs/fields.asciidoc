@@ -264,6 +264,14 @@ ipv6 traffic class, used for quality of service
 
 
 [float]
+=== network.ipv6.length
+
+type: integer
+
+ipv6 payload length
+
+
+[float]
 === transport.type
 
 type of transport layer, e.g. TCP, UDP
@@ -340,4 +348,5 @@ tcp options
 type: long
 
 udp data length
+
 

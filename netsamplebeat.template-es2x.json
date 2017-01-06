@@ -149,6 +149,9 @@
                 "hop_limit": {
                   "type": "long"
                 },
+                "length": {
+                  "type": "long"
+                },
                 "traffic_class": {
                   "type": "long"
                 }
