@@ -1,5 +1,5 @@
-hash: dabbe3c951279552021fb881f1beb9b529d60c758ab889ca99c3c8e4b853b335
-updated: 2017-01-02T22:31:23.913709428+01:00
+hash: 6100e868e442e801e3b83a851e5cf8848ae62e53796d7bf8e2d09eb69304ae50
+updated: 2017-01-07T16:14:54.71629944+01:00
 imports:
 - name: github.com/breml/bpfutils
   version: 1eb784115a1f962047970a25c964250517bf4cfb
@@ -16,7 +16,7 @@ imports:
 - name: github.com/eapache/queue
   version: ded5959c0d4e360646dc9e9908cff48666781367
 - name: github.com/elastic/beats
-  version: 4b4106320c10fdae5ea6e3b376b9ee8d1d50162d
+  version: 8907a3e5ef916b0a130cef778c73f8fdda711cc4
   subpackages:
   - libbeat/beat
   - libbeat/cfgfile
@@ -58,10 +58,11 @@ imports:
   - server/internal
   - server/v2
 - name: github.com/elastic/go-ucfg
-  version: 6baf3ba6c380865e8176e9418551444b25cbf8f2
+  version: 30ac0dc1c9c40d58c338ec641e30d640e1372474
   subpackages:
   - cfgutil
   - flag
+  - internal/parse
   - json
   - yaml
 - name: github.com/garyburd/redigo
@@ -89,6 +90,12 @@ imports:
   version: 19b0b332c9e4516a6370a0456e6182c3b5036720
 - name: github.com/nranchev/go-libGeoIP
   version: c78e8bd2dd3599feb21fd30886043979e82fe948
+- name: github.com/pierrec/lz4
+  version: 5c9560bfa9ace2bf86080bf40d46b34ae44604df
+- name: github.com/pierrec/xxHash
+  version: 5a004441f897722c627870a981d02b29924215fa
+  subpackages:
+  - xxHash32
 - name: github.com/pkg/errors
   version: 01fa4104b9c248c8945d14d9f128454d5b28d595
 - name: github.com/rcrowley/go-metrics
@@ -98,10 +105,10 @@ imports:
 - name: github.com/satori/go.uuid
   version: 879c5887cd475cd7864858769793b2ceb0d44feb
 - name: github.com/Shopify/sarama
-  version: 2091c0107077425080ce59da480912ed2c4be6c8
+  version: f0996189c86dc27338468f2a9b10077c6d572b34
   repo: https://github.com/urso/sarama
 - name: golang.org/x/net
-  version: 8fd7f25955530b92e73e9e1932a41b522b22ccd9
+  version: ae05321a78c1401cec22ba7bc203b597ea372496
   subpackages:
   - bpf
   - proxy

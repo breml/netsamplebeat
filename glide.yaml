@@ -14,6 +14,6 @@ import:
   - layers
   - pcap
 - package: golang.org/x/net
-  version: 8fd7f25955530b92e73e9e1932a41b522b22ccd9
+  version: ae05321a78c1401cec22ba7bc203b597ea372496
   subpackages:
   - bpf
